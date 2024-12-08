@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Sidebar container */
+.sidebar {
+    position: relative;
+    width: 250px;
+    background-color: #182c88;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Cho phép cuộn dọc nếu nội dung quá dài */
+}
+
+.sidebar h3 {
+    text-align: center;
+    color: white;
+}
+
+/* Menu item */
+.menu-item {
+    margin-bottom: 15px;
+}
+
+.menu-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #2a428e;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    background-color: #3a519d;
+}
+
+.menu-text-Profile {
+    width: 30px; /* Chiều rộng của hình ảnh */
+    height: 30px; /* Chiều cao của hình ảnh */
+    border-radius: 50%; /* Làm bo góc thành hình tròn */
+    overflow: hidden; /* Ẩn các phần dư bên ngoài */
+    object-fit: cover; /* Giữ tỷ lệ hình ảnh phù hợp */
+    border: 2px solid #ccc; /* Viền xung quanh (tuỳ chọn) */
+}
+
+.menu-toggle {
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Submenu */
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 20px;
+    display: none;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #2c4b9c;
+}
+
+.submenu a:hover {
+    background-color: #3a519d;
+}
+
+.content_head {
+    flex-grow: 1; /* Phần này sẽ mở rộng để chiếm phần còn lại */
+    padding: 20px;
+    background-color: #fff;
+}
+
+.sidebar-main {
+    flex-grow: 1; /* Mở rộng để chiếm phần còn lại của không gian */
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto; /* Thêm cuộn dọc nếu nội dung quá dài */
+}
+
+.menu-item-profile {
+    position: relative; /* Giữ cho profile đứng trong sidebar */
+}
+
+.collapsible-profile {
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer; /* Thêm chỉ thị con trỏ để cho biết mục có thể nhấn vào */
+    padding:10px
+}
+
+.menu-item-profile .submenu {
+    position: absolute; /* Đặt submenu ở vị trí tuyệt đối */
+    top: -100%; /* Di chuyển submenu lên phía trên của mục profile */
+    left: 0; /* Căn trái cho submenu */
+    background-color: rgba(255, 255, 255, 0); /* Màu nền với độ mờ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng bóng cho submenu */
+    display: none; /* Ẩn submenu mặc định */
+    z-index: 1000; /* Đảm bảo nó hiển thị phía trên các thành phần khác */
+}
+
+/* Hiển thị submenu khi được mở */
+.menu-item-profile .submenu.open {
+    display: block; /* Hiển thị submenu */
+}

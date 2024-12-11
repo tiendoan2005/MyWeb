@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+<div class="sidebar">
+    <h3>QUẢN LÝ ĐĂNG KÝ SINH VIÊN</h3>
+    <div class="menu-item">
+        <div class="menu-link collapsible">
+            <span class="menu-text">Quản lý sinh viên</span>
+            <span class="menu-toggle">▼</span>
+        </div>
+        <ul class="submenu">
+            <li><a href="#">Nhập sinh viên</a></li>
+            <li><a href="#">Chỉnh sửa thông tin</a></li>
+        </ul>
+    </div>
+    <div class="menu-item">
+        <div class="menu-link collapsible">
+            <span class="menu-text">Quản lý tín chỉ</span>
+            <span class="menu-toggle">▼</span>
+        </div>
+        <ul class="submenu">
+            <li><a href="#">Nhập tín chỉ</a></li>
+            <li><a href="#">Đăng ký tín chỉ</a></li>
+        </ul>
+    </div>
+    <div class="menu-item">
+        <div class="menu-link collapsible">
+            <span class="menu-text">Quản lý học tập</span>
+            <span class="menu-toggle">▼</span>
+        </div>
+        <ul class="submenu">
+            <li><a href="#">Chuyên cần</a></li>
+            <li><a href="#">Kết quả học tập</a></li>
+            <li><a href="#">Xếp loại</a></li>
+        </ul>
+    </div>
+</div>
+<div class="sidebar-main">
+    <div class="menu-item-profile">
+        <div class="menu-link collapsible-profile">
+            <span class="menu-text-Profile"><img
+                    src="https://daotao.utt.edu.vn/upload/Core/images/no-avatar.png"></span>
+            <span class="menu-text">Trần Đức Anh</span>
+            <span class="menu-toggle-profile"></span>
+        </div>
+        <ul class="submenu">
+            <li><a href="#">Đổi tên</a></li>
+            <li><a href="#">Đổi ảnh</a></li>
+        </ul>
+    </div>
+    <div class="content_head">
+        <h2 id="header2">Danh Sách Sinh Viên</h2>
+        <input type="text" name="textSearch" id="textSearch" placeholder="Tìm kiếm theo mã sinh viên, tên...">
+        <button type="button" id="btnSearch" onclick="Search()">Tìm kiếm</button>
+        <section class="table" id="student-table">
+            <table>
+                <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã sinh viên</th>
+                    <th>Họ và tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Khóa</th>
+                    <th>Ngành</th>
+                </tr>
+                </thead>
+                <tbody id="student-list"></tbody>
+            </table>
+            <footer>
+                <button class="addStudent">Nhập sinh viên</button>
+                <button class="deleteStudent">Xóa sinh viên</button>
+            </footer>
+        </section>
+    </div>
+</div>
+<script src="Home.js"></script>
+</body>
+
+</html>

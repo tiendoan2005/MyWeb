@@ -1,18 +1,20 @@
 body {
     margin: 0;
     display: flex;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu vẫn còn */
+    box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến kích thước thực tế */
 }
 
 /* Sidebar container */
 .sidebar {
     position: relative;
     width: 20%;
-    background-color: #182c88;
+    background-color: #bfa41b;
     padding: 15px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Cho phép cuộn dọc nếu nội dung quá dài */
@@ -88,8 +90,8 @@ body {
 .content_head {
     flex-grow: 1; /* Phần này sẽ mở rộng để chiếm phần còn lại */
     width: 100%;
-    height: 100vh;
-    background-color: #ffffff;
+    height: 600px;
+    background-color: rgb(143, 143, 143);
 }
 
 .sidebar-main {
@@ -97,27 +99,30 @@ body {
     padding: 0;
     margin: 0;
     width: 80%;
-    background-color: #0059ff;
+    background-color: #bfa41b;
     overflow-y: auto; /* Thêm cuộn dọc nếu nội dung quá dài */
 }
 
 .menu-item-profile {
     position: relative;
-    /*margin-left:;*/
-    padding-top: 0;
-    width: 300px;
+    width: 200px;
+    height: 45px;
+    margin-left: auto;
+    padding: 0;
+
 
 }
 
 .menu-item-profile .menu-text {
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .collapsible-profile {
     background-color: rgba(255, 255, 255, 0);
     cursor: pointer; /* Thêm chỉ thị con trỏ để cho biết mục có thể nhấn vào */
-    padding: 10px
+    padding: 10px;
+    height: 50px;
 }
 
 .menu-item-profile .submenu {
@@ -136,3 +141,91 @@ body {
     display: block; /* Hiển thị submenu */
 }
 
+.table {
+    margin-top: 20px;
+    width: 96%;
+    overflow-x: auto; /* Để cuộn ngang nếu nội dung dài */
+    padding: 20px;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse; /* Loại bỏ khoảng trống giữa các ô */
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+}
+
+.table th {
+    background-color: #f4f4f9;
+}
+
+.content_head footer {
+    padding: 10px;
+}
+
+.content_head h2 {
+    text-align: center;
+    padding: 20px 20px 0;
+    font-size: 30px;
+    color: white;
+}
+
+.content_head #Find {
+    margin-left: 950px;
+    width: 300px;
+}
+
+#btnSearch {
+    background-color: #333333;
+    color: white;
+}
+
+.menu-link .menu-text-home a {
+    color: #ffffff;
+    text-decoration: none;
+}
+/* CSS cho popup (modal) */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+.modal-overlay {
+    display: none; /* Ẩn lớp nền mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+button {
+    cursor: pointer;
+}

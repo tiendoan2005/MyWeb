@@ -17,7 +17,7 @@
         </div>
         <ul class="submenu">
             <li><a href="#">Nhập sinh viên</a></li>
-            <li><a href="#">Chỉnh sửa thông tin</a></li>
+            <li><a href="../Event/Chỉnh%20sửa%20thông%20tin%20cá%20nhân.html">Chỉnh sửa thông tin</a></li>
         </ul>
     </div>
     <div class="menu-item">
@@ -41,6 +41,9 @@
             <li><a href="#">Xếp loại</a></li>
         </ul>
     </div>
+    <div class="menu-link collapsible">
+        <span class="menu-text-home"><a href="../Home/Home.html">Trang chủ</a></span>
+    </div>
 </div>
 <div class="sidebar-main">
     <div class="menu-item-profile">
@@ -57,8 +60,11 @@
     </div>
     <div class="content_head">
         <h2 id="header2">Danh Sách Sinh Viên</h2>
-        <input type="text" name="textSearch" id="textSearch" placeholder="Tìm kiếm theo mã sinh viên, tên...">
-        <button type="button" id="btnSearch" onclick="Search()">Tìm kiếm</button>
+        <hr>
+        <div id="Find">
+            <input type="text" name="textSearch" id="textSearch" placeholder="Tìm kiếm theo mã sinh viên, tên...">
+            <button type="button" id="btnSearch" onclick="Search()">Tìm kiếm</button>
+        </div>
         <section class="table" id="student-table">
             <table>
                 <thead>
@@ -67,17 +73,38 @@
                     <th>Mã sinh viên</th>
                     <th>Họ và tên</th>
                     <th>Ngày sinh</th>
-                    <th>Khóa</th>
+                    <th>Lớp</th>
                     <th>Ngành</th>
                 </tr>
                 </thead>
-                <tbody id="student-list"></tbody>
+                <tbody id="student-list">
+                </tbody>
             </table>
-            <footer>
-                <button class="addStudent">Nhập sinh viên</button>
-                <button class="deleteStudent">Xóa sinh viên</button>
-            </footer>
         </section>
+        <!-- Nút mở popup -->
+        <button onclick="openAddStudentModal()">Thêm sinh viên</button>
+
+        <!-- Popup thêm sinh viên -->
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal" id="addStudentModal">
+            <div class="modal-header">Thêm sinh viên</div>
+            <div class="modal-body">
+                <label for="modalMSV">Mã sinh viên:</label>
+                <input type="text" id="modalMSV"><br><br>
+                <label for="modalName">Họ và tên:</label>
+                <input type="text" id="modalName"><br><br>
+                <label for="modalDoB">Ngày sinh:</label>
+                <input type="date" id="modalDoB"><br><br>
+                <label for="modalClass">Lớp:</label>
+                <input type="text" id="modalClass"><br><br>
+                <label for="modalJob">Ngành:</label>
+                <input type="text" id="modalJob"><br>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeAddStudentModal()">Hủy</button>
+                <button onclick="addStudent()">Lưu</button>
+            </div>
+        </div>
     </div>
 </div>
 <script src="Home.js"></script>
